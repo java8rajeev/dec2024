@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h2>login page</h2>
+<form action="/save" method="post">
+<label for="userName">UserName</label>
+<input type="text" name="userName"><br><br>
+
+<label for="userPassword">Password</label>
+<input type="text" name="userPassword"><br><br>
+<button type="submit">login</button>
+</form>
+<p th:if="${error}" th:text="${error}"></p>
+</body>
+</html>
