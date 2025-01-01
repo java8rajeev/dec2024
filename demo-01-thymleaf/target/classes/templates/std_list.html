@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student List</title>
+</head>
+<body>
+    <h2>List of Students</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Dob</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="std : ${students}">
+                <td th:text="${std.id}"></td>
+                <td th:text="${std.name}"></td>
+                <td th:text="${std.address}"></td>
+                <td th:text="${std.email}"></td>
+                <td th:text="${std.dob}"></td>
+                <td>
+                    <a th:href="@{/edit/{id}(id=${std.id})}"
+                       onclick="return confirm('Are you sure you want to edit this student?');">Edit</a>
+                </td>
+                <td>
+                    <a th:href="@{/delete/{id}(id=${std.id})}"
+                       onclick="return confirm('Are you sure you want to delete this student?');">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/std">back to register page</a>
+</body>
+</html>
